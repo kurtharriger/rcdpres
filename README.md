@@ -1,6 +1,8 @@
-# rcdpres
+# R Continously Delivery example
 
-Nothing to see here yet
+[![Build Status](https://travis-ci.org/kurtharriger/rcdpres.svg?branch=master)](https://travis-ci.org/kurtharriger/rcdpres)
 
-Experimenting continous delivery for R projects
+Experimenting continous delivery for R projects and presentations
+
+Changes to slides.Rmd will be converted to html and published [here](kurtharriger.github.io/rcdpres) using [travis-ci](https://travis-ci.org/kurtharriger/rcdpres) 
 
