@@ -1,5 +1,3 @@
 language: r
 script: ./build.R
 sudo: required
-r_packages:
- - rmarkdown
