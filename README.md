@@ -4,5 +4,5 @@
 
 Experimenting continous delivery for R projects and presentations
 
-Changes to slides.Rmd will be converted to html and published [here](kurtharriger.github.io/rcdpres) using [travis-ci](https://travis-ci.org/kurtharriger/rcdpres) 
+Changes to slides.Rmd will be converted to html and published [here](http://kurtharriger.github.io/rcdpres) using [travis-ci](https://travis-ci.org/kurtharriger/rcdpres) 
 
