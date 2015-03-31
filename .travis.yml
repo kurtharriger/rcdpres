@@ -2,6 +2,7 @@ language: r
 script: "./build.R"
 sudo: required
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id: AKIAJCGFQEZ3CD243KHA
   secret_access_key:
