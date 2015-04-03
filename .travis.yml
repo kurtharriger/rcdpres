@@ -13,3 +13,6 @@ deploy:
   acl: public_read
   on:
     repo: kurtharriger/rcdpres
+env:
+  global:
+    secure: MelM17bdKWp8ZXeE9xh9hS0ZwrtwMrxOeGMDmIIfwfYFs4HeHghr0sAezzLosmjbleaCFB9LFMn+YSgdEKoSaa9Db+EBA7xJuFZuPyERy9DFQYZJWieX+dNLn3auOwjHK5FdYK77qtbWgNpo8BTffMDuMnDaPUhmtuu30Ify8i4=
