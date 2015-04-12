@@ -1,7 +1,8 @@
-Continous Delivery in R
+Continous Delivery for R Users
 ========================================================
 author:  Kurt Harriger
 date:    2015/04/03
+
 
 About your presenter
 ========================================================
@@ -14,3 +15,133 @@ Rally is the leader in agile transformations -- providing the training and tools
 
 What is Continous Delivery
 ========================================================
+
+Continous Delivery is the automation of all the steps necessary to build and release final artifacts as the source code is changed.
+
+Release artifacts come in many forms:
+
+- Websites
+- Documentation
+- Developer libraries and packages
+- Platform specific packages 
+- Docker containers
+
+R speific artifacts
+=======================================================
+
+- Shiny applications
+  - Shinyapps.io
+  - Self Hosted
+  
+  
+R speific artifacts
+=======================================================
+- Packages
+  - CRAN
+  - Custom repo
+  - Github
+  
+- Documentation
+  - RPubs
+  - Github
+  - Amazon Web Services
+
+Advantages of Continous Delivery 
+========================================================
+
+- Accellerated Time to Market
+- Building the Right Product
+- Improved Productivity and Efficiency
+- Reliable Releases
+- Improved Product Quality
+
+Continous Integration/Delivery Tools
+========================================================
+
+- Travis-ci
+- Jenkins
+- Drone.io
+- Docker.io
+
+Travis-CI - travis-ci.org - travis-ci.com
+========================================================
+
+<center>
+![travisci](travisci.png)
+</center>
+
+* Easiest to use
+* R support
+* Open source but not easy to host your own
+
+Jenkins-CI - jenkins-ci.org 
+========================================================
+
+<center>
+![jenkinsci](jenkins.png)
+</center>
+
+* Self-Hosted CI soltuion
+* Also supports scheduled jobs
+
+Docker.io - docker.io 
+========================================================
+
+<center>
+![dockerio](dockerio.png)
+</center>
+
+- Build your own docker images 
+  - AWS
+  - Digital Ocean
+  
+
+Travis-CI - travis.yml
+========================================================
+
+http://docs.travis-ci.com/user/languages/r/
+
+- Build and test r packages
+
+   `.travis.yml` 
+
+```
+language: r
+sudo: required
+```
+
+Travis-CI - Deploy shinyapps.io
+========================================================
+
+
+   `build.R` 
+
+```
+#! /usr/bin/env Rscript 
+
+shinyapps::setAccountInfo(name='kurtharriger',
+                          token='DE3CF8C226BDB4F14DBC429AFB12403B',
+                          secret=Sys.getenv("SHINYAPPS_SECRET"))
+shinyapps::deployApp('shiny')
+
+```
+
+
+Travis-CI - Deploy shinyapps.io
+========================================================
+
+   `.travis.yml` 
+
+```
+language: r
+sudo: required
+script: ./build.R
+SHINYAPPS_SECRET:
+  secure: IY+WvEe5...MU3X6GU/yZFvQ=
+```
+
+```
+gem install travis
+
+travis encrypt --add SHINYAPPS_SECRET "<your secret key>"
+```

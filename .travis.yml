@@ -13,9 +13,8 @@ deploy:
   acl: public_read
   on:
     repo: kurtharriger/rcdpres
-env:
-  global:
-    secure: MelM17bdKWp8ZXeE9xh9hS0ZwrtwMrxOeGMDmIIfwfYFs4HeHghr0sAezzLosmjbleaCFB9LFMn+YSgdEKoSaa9Db+EBA7xJuFZuPyERy9DFQYZJWieX+dNLn3auOwjHK5FdYK77qtbWgNpo8BTffMDuMnDaPUhmtuu30Ify8i4=
 r_github_packages:
  - rstudio/shiny
  - rstudio/shinyapps
+SHINYAPPS_SECRET:
+  secure: IY+WvEe5A7BeV2xjy0MeqNhRID7knSeALyJ0pafudZCc/gxemb9TVTkqjLQtb8ZzhPk2FC3vwec58sZhf5jZsGUEnsbqMOrRNMuE4kK7y2pSmwDzBMY+HOQirtws1HpEkIKli3N44l978AVG0wNQUN1cxwJsxZMU3X6GU/yZFvQ=
