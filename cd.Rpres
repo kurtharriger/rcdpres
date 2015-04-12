@@ -59,9 +59,8 @@ Continous Integration/Delivery Tools
 ========================================================
 
 - Travis-ci
-- Jenkins
-- Drone.io
 - Docker.io
+- Jenkins
 
 Travis-CI - travis-ci.org - travis-ci.com
 ========================================================
@@ -74,16 +73,6 @@ Travis-CI - travis-ci.org - travis-ci.com
 * R support
 * Open source but not easy to host your own
 
-Jenkins-CI - jenkins-ci.org 
-========================================================
-
-<center>
-![jenkinsci](jenkins.png)
-</center>
-
-* Self-Hosted CI soltuion
-* Also supports scheduled jobs
-
 Docker.io - docker.io 
 ========================================================
 
@@ -95,6 +84,16 @@ Docker.io - docker.io
   - AWS
   - Digital Ocean
   
+
+Jenkins-CI - jenkins-ci.org 
+========================================================
+
+<center>
+![jenkinsci](jenkins.png)
+</center>
+
+* Self-Hosted CI soltuion
+* Also supports scheduled jobs
 
 Travis-CI - travis.yml
 ========================================================
@@ -188,6 +187,21 @@ deploy:
 ````
 
 
+RPres and RPubs 
+========================================================
+
+Somewhat possible to update an existing RPubs publication
+
+```
+markdown::rpubsUpload('Test Presentation', 'target/slides.html', id= "https://api.rpubs.com/api/v1/document/71314/<previously published document id>")
+```
+
+RPres to html conversion is implemented in RStudio source and is not currenlty callable from R code - You must click the Save As Webpage action in RStudio to generate the html.
+
+[RStudio Source](https://github.com/rstudio/rstudio/blob/41b8cc23789d776a2ef5668c00b77fda941c7abb/src/cpp/session/modules/presentation/SlideRequestHandler.cpp#L740)
+
+
+
 Travis-CI - More examples
 ========================================================
 
@@ -211,3 +225,32 @@ dplyr
 Adv-R 
   - Source code for the Advanced R Programming book
   - https://github.com/hadley/adv-r/blob/master/.travis.yml
+
+Docker.io - docker.io 
+========================================================
+
+Containers are the up and comming unit of deployment.
+
+Docker.io can build and publish docker container images on code changes.
+
+Provides webhooks after image published, but requires some glue to depoy image to server after image is built.
+
+
+Jenkins
+========================================================
+
+The most flexible and mature continous integration software, but must be self-hosted.
+
+Run arbitrary code on jenkins server and/or build agents
+Schedule tasks
+Trigger builds on completion of other builds
+
+
+Questions
+========================================================
+
+Kurt Harriger  
+kurtharriger@gmail.com  
+@kurtharriger  
+https://www.linkedin.com/in/kurtharriger  
+
