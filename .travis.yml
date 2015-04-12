@@ -14,7 +14,8 @@ deploy:
   on:
     repo: kurtharriger/rcdpres
 r_github_packages:
- - rstudio/shiny
- - rstudio/shinyapps
-SHINYAPPS_SECRET:
-  secure: IY+WvEe5A7BeV2xjy0MeqNhRID7knSeALyJ0pafudZCc/gxemb9TVTkqjLQtb8ZzhPk2FC3vwec58sZhf5jZsGUEnsbqMOrRNMuE4kK7y2pSmwDzBMY+HOQirtws1HpEkIKli3N44l978AVG0wNQUN1cxwJsxZMU3X6GU/yZFvQ=
+- rstudio/shiny
+- rstudio/shinyapps
+env:
+  global:
+    secure: YCYysDst6/P+luWHxeHqYFBT/c+lpGMch3P3hknPSo5uvQYLzrp69omVwIkFZdjiZHk3xPqj/swQ2TjoVJM5v1KFtylIeP0xhoSztVywQyZ4b2pOV01Om1CF25RAG4TY5hd+Rrdwq9pQulEFUwIK73f52T5q9l8xvfXeW91/V6c=

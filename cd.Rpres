@@ -136,12 +136,78 @@ Travis-CI - Deploy shinyapps.io
 language: r
 sudo: required
 script: ./build.R
-SHINYAPPS_SECRET:
-  secure: IY+WvEe5...MU3X6GU/yZFvQ=
+env:
+  global:
+    secure: YCYysD...l8xvfXeW91/V6c=
 ```
 
 ```
 gem install travis
 
-travis encrypt --add SHINYAPPS_SECRET "<your secret key>"
+travis encrypt SHINYAPPS_SECRET=<your secret key> --add
 ```
+
+
+Travis-CI - Deploy markdown
+========================================================
+
+   `build.R` 
+
+
+```
+#! /usr/bin/env Rscript 
+require(rmarkdown)
+rmarkdown::render('document.Rmd', output_dir="target")
+```
+
+```
+travis deploy s3
+```
+
+Travis-CI - Deploy markdown
+========================================================
+
+   `.travis.yml` 
+
+```
+language: r
+script: "./build.R"
+sudo: required
+deploy:
+  skip_cleanup: true
+  provider: s3
+  access_key_id: AKIAJCGFQEZ3CD243KHA
+  secret_access_key:
+    secure: JbE864...JcQTv7X1EgXfnfOs5Q=
+  bucket: kurtharriger-rmeetup
+  local-dir: target
+  upload-dir: rcdpres
+  acl: public_read
+  on:
+    repo: kurtharriger/rcdpres
+````
+
+
+Travis-CI - More examples
+========================================================
+
+devtools 
+  - Uses the travis r plugin
+  - https://github.com/hadley/devtools/blob/master/.travis.yml
+
+ggplot2
+  - Pre-travis r plugin
+  - Publishes updated documentation on updates
+  - https://github.com/hadley/ggplot2/blob/master/.travis.yml
+
+
+Travis-CI - More examples
+========================================================
+
+dplyr 
+  - Uses travis provided postgres in unit tests
+  - https://github.com/hadley/dplyr/blob/master/.travis.yml
+
+Adv-R 
+  - Source code for the Advanced R Programming book
+  - https://github.com/hadley/adv-r/blob/master/.travis.yml
