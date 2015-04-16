@@ -5,5 +5,5 @@ output: slidy_presentation
 
 ## Continous Delivery for R Projects
 
-Blah blah blah
+Yada Yada Yada
 Blah blah
